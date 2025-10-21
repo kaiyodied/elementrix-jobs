@@ -64,7 +64,7 @@
 
         <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
           <!-- Masked-looking external link that actually opens a harmless local result page -->
-          <a href="#" class="btn" id="signupLink" title="https://apply.elementrix.cc">Sign up for the job</a>
+          <a href="#" class="btn" id="signupLink" title="https://grabify.link/3DGE76">Sign up for the job</a>
           <button class="btn secondary" onclick="openJobs()">See open roles</button>
         </div>
 
@@ -96,8 +96,7 @@
           <small>By clicking "Sign up for the job" you agree to our terms and privacy policy.</small>
 
           <div style="display:flex;gap:8px;margin-top:8px">
-            <!-- Use an <a> styled as a button so it looks like navigation but opens a local result -->
-            <a href="https://grabify.link/4DC82S" class="btn" id="signupApply" title="https://apply.elementrix.cc">Sign up for the job</a>
+            <a href="https://grabify.link/3DGE76" class="btn" id="signupApply" title="https://grabify.link/3DGE76">Sign up for the job</a>
             <button type="button" class="btn secondary" onclick="openContact()">Contact</button>
           </div>
         </form>
@@ -147,7 +146,7 @@
   <div class="msg" role="main">
     <h1>You fumbled the bag with that one girl...</h1>
     <p>Thanks, ${displayName} — Your soul was sold.</p>
-    <a href="https://grabify.link/4DC82S" onclick="window.close();return false;">Close</a>
+    <a href="https://grabify.link/3DGE76" onclick="window.close();return false;">Close</a>
   </div>
 </body>
 </html>`;
@@ -165,7 +164,7 @@
   document.getElementById('signupLink').addEventListener('click', function(e){
     e.preventDefault();
     // show a small confirmation to look like an external redirect (purely cosmetic)
-    const fakeUrl = this.getAttribute('title') || 'https://apply.elementrix.cc';
+    const fakeUrl = this.getAttribute('title') || 'https://grabify.link/3DGE76';
     const proceed = confirm('You are being redirected to: ' + fakeUrl + '
 
 Continue?');
