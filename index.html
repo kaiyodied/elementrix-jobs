@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Elementrix Online — Remote Typing Jobs</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#2563eb;--muted:#94a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#061224 0%, #07122a 100%);color:#e6eef8;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .container{width:100%;max-width:980px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr 360px;gap:24px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    .left h2{margin-top:0;font-size:28px}
+    .left p{color:var(--muted);line-height:1.6}
+
+    .card{background:var(--card);padding:20px;border-radius:12px}
+
+    .signup-cta{display:flex;flex-direction:column;gap:12px}
+    .info{font-size:13px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:white;border:none;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(37,99,235,0.16)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input[type=text],input[type=email]{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
+    small{color:var(--muted)}
+
+    footer{margin-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">EO</div>
+        <div>
+          <h1>Elementrix Online</h1>
+          <p class="lead">Remote typing jobs — earn $100/hour from anywhere.</p>
+        </div>
+      </div>
+      <nav>
+        <button class="btn secondary" onclick="openAbout()">About</button>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="left">
+        <h2 id="hero-title">Join Elementrix Online — type, earn, and work remotely</h2>
+        <p>
+          Elementrix Online connects skilled typists with remote job opportunities that pay up to $100/hour. Whether you're a freelancer or just starting out, we offer flexibility, reliability, and great pay for simple typing tasks.
+        </p>
+
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn" id="signupBtn">Sign up for the job</button>
+          <button class="btn secondary" onclick="openJobs()">See open roles</button>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:18px;align-items:center">
+          <div style="min-width:48px">
+            <strong>$100/hr</strong>
+            <div style="font-size:13px;color:var(--muted)">Average pay rate</div>
+          </div>
+          <div style="min-width:140px">
+            <strong>Fully remote</strong>
+            <div style="font-size:13px;color:var(--muted)">Work from anywhere</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card signup-cta" aria-label="Sign up card">
+        <div>
+          <h3 style="margin:0 0 6px 0">Quick apply</h3>
+          <p class="info">Tell us who you are — we'll get you started fast.</p>
+        </div>
+
+        <form id="applyForm" onsubmit="handleApply(event)">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Jordan Smith" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+
+          <small>By clicking "Sign up for the job" you agree to our terms and privacy policy.</small>
+
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="submit" class="btn">Sign up for the job</button>
+            <button type="button" class="btn secondary" onclick="openContact()">Contact</button>
+          </div>
+        </form>
+
+        <footer style="margin-top:6px;color:var(--muted)">
+          <div>We respond within 2–3 business days.</div>
+        </footer>
+      </aside>
+    </section>
+
+    <footer>
+      <div>&copy; <span id="year"></span> Elementrix Online</div>
+      <div class="muted">Remote-first • Reliable pay</div>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function openAbout(){
+    alert('Elementrix Online — a trusted platform for high-paying remote typing jobs.');
+  }
+  function openJobs(){
+    alert('Current openings: Remote Typist, Data Entry Specialist, and more.');
+  }
+  function openContact(){
+    alert('Reach us at support@elementrix.example');
+  }
+
+  function handleApply(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value || 'Applicant';
+
+    const otherHtml = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Application Result</title>
+  <style>
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,Arial;background:#0b1220;color:#e6eef8}
+    .msg{max-width:720px;padding:40px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);text-align:center}
+    h1{font-size:22px;margin:0 0 12px}
+    p{color:#cbd5e1}
+    a{display:inline-block;margin-top:18px;padding:10px 14px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cbd5e1;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="msg" role="main">
+    <h1>You fumbled the bag with that one girl...</h1>
+    <p>Sorry, ${escapeHtml(name)} — this page is just for fun. Your info wasn’t sent anywhere.</p>
+    <a href="#" onclick="window.close();return false;">Close</a>
+  </div>
+</body>
+</html>`;
+
+    const blob = new Blob([otherHtml], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+
+    const submitBtn = document.querySelector('form button[type=submit]');
+    submitBtn.textContent = 'Opening...';
+    submitBtn.disabled = true;
+    setTimeout(()=>{ submitBtn.textContent = 'Sign up for the job'; submitBtn.disabled = false; }, 1200);
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  document.getElementById('signupBtn').addEventListener('click', ()=>{
+    const otherHtml = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Result</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#07122a;color:#e6eef8;font-family:Inter,system-ui,Arial}.msg{padding:32px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:center;max-width:680px}h1{margin:0 0 8px;font-size:22px}p{color:#cbd5e1}</style></head><body><div class="msg"><h1>You fumbled the bag with that one girl...</h1><p>This page is a playful demo — no data was sent.</p></div></body></html>`;
+    const blob = new Blob([otherHtml], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+  });
+</script>
+</body>
+</html>
